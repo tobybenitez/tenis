@@ -17,49 +17,264 @@
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { line-height: 1.6; color: var(--text-color); background-color: #f9f9f9; }
-        header { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 1rem 0; text-align: center; }
-        .logo { display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .logo h1 { font-size: 2rem; font-weight: 700; }
-        nav { background-color: #333; padding: 0.5rem; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-        nav ul li { padding: 0.5rem; }
-        nav ul li button { color: white; background: none; border: none; cursor: pointer; font-weight: 500; padding: 0.5rem 1rem; border-radius: var(--border-radius); transition: background-color 0.3s; }
-        nav ul li button:hover, .active { background-color: rgba(255, 255, 255, 0.2); }
-        main { max-width: 1200px; margin: 0 auto; padding: 2rem 20px; }
-        .section-title { font-size: 2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
-        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 4px; background-color: var(--primary-color); }
-        .contenido-seccion { display: none; animation: fadeIn 0.5s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
-        .card { background-color: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); }
-        .card-image { height: 200px; background-color: #ddd; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-        .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .card-content { padding: 1.5rem; }
-        .card-title { font-size: 1.3rem; margin-bottom: 0.8rem; }
-        ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-        .table-container { overflow-x: auto; margin-bottom: 2rem; }
-        table { width: 100%; border-collapse: collapse; }
-        table, th, td { border: 1px solid #ddd; }
-        th, td { padding: 12px 15px; text-align: left; }
-        th { background-color: var(--primary-color); color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-        .player-container { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; }
-        .player-card { flex: 1 1 300px; background-color: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); }
-        .player-image { height: 200px; background-color: #ddd; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-        .player-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .player-info { padding: 1.5rem; }
-        .player-name { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        footer { background-color: var(--dark-color); color: white; padding: 2rem 0; text-align: center; }
-        .footer-links { list-style: none; display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; }
-        .footer-links a { color: white; text-decoration: none; }
-        .social-links { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
-        .social-links a { color: white; font-size: 1.5rem; }
-        .copyright { font-size: 0.9rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav ul li {
+            padding: 0.5rem;
+        }
+
+        nav ul li button {
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s;
+        }
+
+        nav ul li button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .contenido-seccion {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .player-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .player-card {
+            flex: 1 1 300px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .player-image {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .player-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .player-info {
+            padding: 1.5rem;
+        }
+
+        .player-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
-            nav ul { flex-direction: column; align-items: center; }
-            .player-container, .card-grid { grid-template-columns: 1fr; }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .player-container, .card-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -91,7 +306,7 @@
             
             <div class="card-grid">
                 <div class="card">
-                    <div class="card-image"><img src="grandes-torneos.webp" alt="Grandes Torneos"></div>
+                    <div class="card-image"><img src="grandes torneos.webp" alt="Grandes Torneos"></div>
                     <div class="card-content">
                         <h3 class="card-title">Los Grandes Torneos</h3>
                         <p>El Grand Slam de tenis consiste en los cuatro torneos más prestigiosos: Abierto de Australia, Roland Garros, Wimbledon y el US Open.</p>
@@ -99,7 +314,7 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-image"><img src="grandes-leyendas.jpg" alt="Leyendas del Tenis"></div>
+                    <div class="card-image"><img src="img/grandes leyendas.jpg" alt="Leyendas del Tenis"></div>
                     <div class="card-content">
                         <h3 class="card-title">Leyendas del Tenis</h3>
                         <p>Descubre la historia de jugadores legendarios como Roger Federer, Rafael Nadal, Novak Djokovic, Serena Williams y muchos más.</p>
@@ -107,7 +322,7 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-image"><img src="tactica.gif" alt="Técnicas y Estrategias"></div>
+                    <div class="card-image"><img src="img/tactica.gif" alt="Técnicas y Estrategias"></div>
                     <div class="card-content">
                         <h3 class="card-title">Técnicas y Estrategias</h3>
                         <p>Aprende sobre los diferentes golpes, técnicas y estrategias que utilizan los jugadores profesionales en sus partidos.</p>
@@ -147,7 +362,7 @@
             
             <div class="player-container">
                 <div class="player-card">
-                    <div class="player-image"><img src="roger-federer.webp" alt="Roger Federer"></div>
+                    <div class="player-image"><img src="img/Roger-Federer.webp" alt="Roger Federer"></div>
                     <div class="player-info">
                         <h3 class="player-name">Roger Federer</h3>
                         <p><strong>País:</strong> Suiza</p>
@@ -157,7 +372,7 @@
                 </div>
                 
                 <div class="player-card">
-                    <div class="player-image"><img src="rafael-nadal.webp" alt="Rafael Nadal"></div>
+                    <div class="player-image"><img src="img/Rafael-Nadal.webp" alt="Rafael Nadal"></div>
                     <div class="player-info">
                         <h3 class="player-name">Rafael Nadal</h3>
                         <p><strong>País:</strong> España</p>
@@ -167,22 +382,44 @@
                 </div>
                 
                 <div class="player-card">
-                    <div class="player-image"><img src="novak-djokovic.jpg" alt="Novak Djokovic"></div>
+                    <div class="player-image"><img src="img/Novak-Djokovic.jpg" alt="Novak Djokovic"></div>
                     <div class="player-info">
                         <h3 class="player-name">Novak Djokovic</h3>
                         <p><strong>País:</strong> Serbia</p>
-                        <p><strong>Grand Slams:</strong> 23</p>
-                        <p>Conocido por su increíble resistencia física y mental, Djokovic ha sido dominante en todas las superficies y posee récords históricos en el tenis moderno.</p>
+                        <p><strong>Grand Slams:</strong> 24</p>
+                        <p>El tenista con más títulos de Grand Slam en la historia masculina. Su flexibilidad, devolución de servicio y resistencia mental lo convierten en un jugador excepcional en todas las superficies.</p>
                     </div>
                 </div>
-                
+            </div>
+            
+            <div class="player-container">
                 <div class="player-card">
-                    <div class="player-image"><img src="serena-williams.jpg" alt="Serena Williams"></div>
+                    <div class="player-image"><img src="img/Serena-Williams.jpg" alt="Serena Williams"></div>
                     <div class="player-info">
                         <h3 class="player-name">Serena Williams</h3>
                         <p><strong>País:</strong> Estados Unidos</p>
                         <p><strong>Grand Slams:</strong> 23</p>
-                        <p>Una de las jugadoras más dominantes de todos los tiempos, su potencia y agresividad en la cancha cambiaron la historia del tenis femenino.</p>
+                        <p>Una de las mejores jugadoras de la historia. Su potente servicio y golpes agresivos revolucionaron el tenis femenino.</p>
+                    </div>
+                </div>
+                
+                <div class="player-card">
+                    <div class="player-image"><img src="img/Steffi-Graf.jpg" alt="Steffi Graf"></div>
+                    <div class="player-info">
+                        <h3 class="player-name">Steffi Graf</h3>
+                        <p><strong>País:</strong> Alemania</p>
+                        <p><strong>Grand Slams:</strong> 22</p>
+                        <p>La única tenista en lograr el "Golden Slam" (los cuatro Grand Slams y la medalla de oro olímpica en un mismo año).</p>
+                    </div>
+                </div>
+                
+                <div class="player-card">
+                    <div class="player-image"><img src="img/Martina-Navratilova.jpg" alt="Martina Navratilova"></div>
+                    <div class="player-info">
+                        <h3 class="player-name">Martina Navratilova</h3>
+                        <p><strong>País:</strong> Estados Unidos/Checoslovaquia</p>
+                        <p><strong>Grand Slams (singles):</strong> 18</p>
+                        <p>Con un total de 59 títulos de Grand Slam (incluyendo dobles), es considerada una de las tenistas más completas de la historia.</p>
                     </div>
                 </div>
             </div>
@@ -190,92 +427,207 @@
 
         <section id="torneos" class="contenido-seccion">
             <h2 class="section-title">Torneos Importantes</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-image"><img src="roland-garros2025.jfif" alt="Roland Garros 2025"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Roland Garros</h3>
-                        <p>El torneo de arcilla más prestigioso, conocido por su exigencia física y estratégica.</p>
-                    </div>
-                </div>
+            
+            <h3>Grand Slam</h3>
+            <p>Los torneos de Grand Slam son los cuatro eventos más prestigiosos en el tenis profesional:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Torneo</th>
+                            <th>Ubicación</th>
+                            <th>Superficie</th>
+                            <th>Mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abierto de Australia</td>
+                            <td>Melbourne, Australia</td>
+                            <td>Pista dura</td>
+                            <td>Enero</td>
+                        </tr>
+                        <tr>
+                            <td>Roland Garros</td>
+                            <td>París, Francia</td>
+                            <td>Arcilla</td>
+                            <td>Mayo-Junio</td>
+                        </tr>
+                        <tr>
+                            <td>Wimbledon</td>
+                            <td>Londres, Reino Unido</td>
+                            <td>Césped</td>
+                            <td>Junio-Julio</td>
+                        </tr>
+                        <tr>
+                            <td>US Open</td>
+                            <td>Nueva York, EE.UU.</td>
+                            <td>Pista dura</td>
+                            <td>Agosto-Septiembre</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            
+            <h3>Otros torneos importantes</h3>
+            <ul>
+                <li><strong>ATP Finals:</strong> Torneo que enfrenta a los 8 mejores jugadores de la temporada.</li>
+                <li><strong>Masters 1000:</strong> Serie de nueve torneos prestigiosos que incluyen eventos como Indian Wells, Miami, Madrid, etc.</li>
+                <li><strong>Copa Davis:</strong> Competición por equipos nacionales masculinos.</li>
+                <li><strong>Billie Jean King Cup:</strong> Competición por equipos nacionales femeninos (anteriormente Fed Cup).</li>
+                <li><strong>Juegos Olímpicos:</strong> Celebrados cada cuatro años.</li>
+            </ul>
         </section>
 
         <section id="equipamiento" class="contenido-seccion">
-            <h2 class="section-title">Equipamiento</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-image"><img src="tecnologia.webp" alt="Tecnología en el tenis"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Tecnología</h3>
-                        <p>Raquetas de carbono, sensores, ropa deportiva avanzada y pelotas adaptadas a cada superficie.</p>
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title">Equipamiento de Tenis</h2>
+            
+            <h3>Raquetas</h3>
+            <p>Las raquetas de tenis han evolucionado significativamente a lo largo de los años. Actualmente, existen diferentes tipos según las necesidades de cada jugador:</p>
+            <ul>
+                <li><strong>Raquetas de potencia:</strong> Más ligeras y con cabezas más grandes, ideal para principiantes o jugadores que buscan mayor potencia.</li>
+                <li><strong>Raquetas de control:</strong> Más pesadas y con cabezas más pequeñas, preferidas por jugadores avanzados que buscan mayor precisión.</li>
+                <li><strong>Raquetas intermedias:</strong> Ofrecen un equilibrio entre potencia y control.</li>
+            </ul>
+            
+            <h3>Pelotas</h3>
+            <p>Las pelotas de tenis varían según la superficie de juego y el nivel de los jugadores:</p>
+            <ul>
+                <li><strong>Pelotas presurizadas:</strong> Las más comunes en torneos profesionales, ofrecen un rebote más consistente pero duran menos tiempo.</li>
+                <li><strong>Pelotas sin presión:</strong> Más duraderas, ideales para entrenamientos.</li>
+                <li><strong>Pelotas para diferentes superficies:</strong> Existen pelotas específicas para arcilla, césped y pista dura.</li>
+            </ul>
+            
+            <h3>Calzado y vestimenta</h3>
+            <p>El calzado de tenis está diseñado específicamente para cada superficie:</p>
+            <ul>
+                <li>Zapatillas para arcilla con suela en espiga</li>
+                <li>Zapatillas para césped con tacos pequeños</li>
+                <li>Zapatillas para pista dura con mayor amortiguación</li>
+            </ul>
+            <p>La vestimenta ha evolucionado hacia materiales técnicos que favorecen la transpiración y libertad de movimiento. Algunos torneos como Wimbledon mantienen reglas estrictas (blanco obligatorio).</p>
         </section>
 
         <section id="canchas" class="contenido-seccion">
             <h2 class="section-title">Tipos de Canchas</h2>
+            
+            <h3>Arcilla</h3>
+            <p>Las canchas de arcilla (tierra batida) son superficies lentas que favorecen a los jugadores con juego desde el fondo de la pista.</p>
             <ul>
-                <li>Césped</li>
-                <li>Arcilla</li>
-                <li>Pista dura</li>
-                <li>Moqueta / Alfombra</li>
+                <li><strong>Características:</strong> Pelota más lenta, botes más altos</li>
+                <li><strong>Deslizamiento:</strong> Permite deslizarse para llegar a las bolas</li>
+                <li><strong>Principales torneos:</strong> Roland Garros, Madrid Open, Roma</li>
+                <li><strong>Especialistas:</strong> Rafael Nadal, Iga Swiatek</li>
+            </ul>
+            
+            <h3>Césped</h3>
+            <p>Las canchas de césped son las más rápidas y tienen un rebote bajo e imprevisible.</p>
+            <ul>
+                <li><strong>Características:</strong> Pelota rápida, botes bajos</li>
+                <li><strong>Juego:</strong> Favorece el saque y la volea</li>
+                <li><strong>Principales torneos:</strong> Wimbledon, Queen's, Halle</li>
+                <li><strong>Especialistas:</strong> Roger Federer, Pete Sampras</li>
+            </ul>
+            
+            <h3>Pista dura</h3>
+            <p>Las canchas duras ofrecen un equilibrio entre velocidad y control.</p>
+            <ul>
+                <li><strong>Características:</strong> Velocidad media-alta, bote regular</li>
+                <li><strong>Variedades:</strong> Acrílicas, asfálticas, sintéticas</li>
+                <li><strong>Principales torneos:</strong> Abierto de Australia, US Open, Indian Wells</li>
+                <li><strong>Especialistas:</strong> Novak Djokovic, Daniil Medvedev</li>
+            </ul>
+            
+            <h3>Indoor</h3>
+            <p>Las canchas cubiertas suelen ser rápidas y no están afectadas por el clima.</p>
+            <ul>
+                <li><strong>Principales torneos:</strong> ATP Finals, torneos europeos de otoño</li>
             </ul>
         </section>
 
         <section id="noticias" class="contenido-seccion">
             <h2 class="section-title">Últimas Noticias</h2>
-            <p>Próximos torneos, resultados recientes y noticias destacadas del mundo del tenis.</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image"><img src="img/Carlos-Alcaraz.jpeg" alt="Carlos Alcaraz"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Carlos Alcaraz: La nueva estrella del tenis español</h3>
+                        <p>Con solo 21 años, Carlos Alcaraz ya ha ganado varios Grand Slams y se posiciona como uno de los sucesores de la generación dorada del tenis.</p>
+                        <p><small>Fecha: 15 de mayo, 2025</small></p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image"><img src="img/Tecnologia.webp" alt="Tecnología en el tenis"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Innovaciones tecnológicas en el tenis moderno</h3>
+                        <p>Las nuevas tecnologías están cambiando la forma en que los jugadores entrenan y compiten. Desde análisis de datos hasta raquetas inteligentes.</p>
+                        <p><small>Fecha: 10 de mayo, 2025</small></p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image"><img src="img/Roland-Garros2025.jfif" alt="Roland Garros 2025"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Próximo Roland Garros: favoritos y contendientes</h3>
+                        <p>A pocas semanas del inicio del segundo Grand Slam del año, analizamos quiénes son los principales candidatos a llevarse el título en París.</p>
+                        <p><small>Fecha: 5 de mayo, 2025</small></p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contacto" class="contenido-seccion">
             <h2 class="section-title">Contacto</h2>
-            <p>Para consultas y sugerencias, comunícate con nosotros a través de:</p>
-            <ul>
-                <li>Email: contacto@tenismundial.com</li>
-                <li>Instagram: @tenismundial</li>
-                <li>LinkedIn: Tenis Mundial</li>
-            </ul>
+            
+            <form>
+                <div style="margin-bottom: 1rem;">
+                    <label for="nombre" style="display: block;">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" style="width: 100%; padding: 0.5rem; border-radius: var(--border-radius); border: 1px solid #ddd;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="email" style="display: block;">Email:</label>
+                    <input type="email" id="email" name="email" style="width: 100%; padding: 0.5rem; border-radius: var(--border-radius); border: 1px solid #ddd;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="mensaje" style="display: block;">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" style="width: 100%; padding: 0.5rem; border-radius: var(--border-radius); border: 1px solid #ddd;"></textarea>
+                </div>
+                
+                <button type="submit" style="background-color: var(--primary-color); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: var(--border-radius); cursor: pointer;">Enviar mensaje</button>
+            </form>
         </section>
     </main>
-
-    <footer>
-        <ul class="footer-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#historia">Historia</a></li>
-            <li><a href="#jugadores">Jugadores</a></li>
-            <li><a href="#torneos">Torneos</a></li>
-            <li><a href="#equipamiento">Equipamiento</a></li>
-            <li><a href="#canchas">Canchas</a></li>
-            <li><a href="#noticias">Noticias</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p class="copyright">© 2025 Tenis Mundial. Todos los derechos reservados.</p>
-    </footer>
-
     <script>
-        function mostrarSeccion(id) {
-            var secciones = document.querySelectorAll('.contenido-seccion');
-            for (var i = 0; i < secciones.length; i++) {
-                secciones[i].style.display = 'none';
-            }
-            document.getElementById(id).style.display = 'block';
+        function mostrarSeccion(seccion) {
+   
+            const secciones = document.querySelectorAll('.contenido-seccion');
+            secciones.forEach(function(seccionElement) {
+                seccionElement.style.display = 'none';
+            });
+          
+            const seccionSeleccionada = document.getElementById(seccion);
+            seccionSeleccionada.style.display = 'block';
+            
+          
+            const botones = document.querySelectorAll('nav ul li button');
+            botones.forEach(function(boton) {
+                boton.classList.remove('active');
+                if (boton.getAttribute('onclick').includes(seccion)) {
+                    boton.classList.add('active');
+                }
+            });
 
-            var botones = document.querySelectorAll('nav ul li button');
-            for (var i = 0; i < botones.length; i++) {
-                botones[i].classList.remove('active');
-            }
-            document.querySelector('nav ul li button[onclick="mostrarSeccion(\'' + id + '\')"]').classList.add('active');
+            window.scrollTo(0, 0);
         }
 
-        // Mostrar inicio por defecto
-        mostrarSeccion('inicio');
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarSeccion('inicio');
+        });
     </script>
 </body>
 </html>
